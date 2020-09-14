@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { leadsListService } from '../../../../services/leadslist'
 
 @Component({
   selector: 'app-leadreport',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lead.component.scss']
 })
 export class LeadReportComponent implements OnInit {
-
-  constructor() { }
+  leadlist : any = []
+  constructor(private leadslist : leadsListService) {
+    this.LeadsData()
+   }
 
   ngOnInit(): void {
+  }
+  LeadsData()
+  {
+    
+    this.leadslist.GetLeads().subscribe((Response) =>
+    {
+      this.leadlist = Response.ResponseData
+    })
   }
 
 }

@@ -153,12 +153,8 @@ export const DynamicAsideMenuConfig = {
       svg: './assets/media/svg/icons/Shopping/Bitcoin.svg',
       submenu: [
         {
-          title: 'List Column',
+          title: 'Institutes List',
           page: '/institute/list'
-        },
-        {
-          title: 'List Datatable',
-          page: '/institute/table'
         },
         {
           title: 'View Projects',
