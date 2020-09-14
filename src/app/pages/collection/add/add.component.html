@@ -94,14 +94,14 @@
                   <div class="row justify-content-center my-10 px-8 my-lg-15 px-lg-10">
                       <div class="col-xl-12 col-xxl-7">
                           <!--begin::Form Wizard Form-->
-                          <form class="form fv-plugins-bootstrap fv-plugins-framework" id="kt_contact_add_form">
+                          <form (ngSubmit)="cformsubmit()" class="form fv-plugins-bootstrap fv-plugins-framework">
                               <!--begin::Form Wizard Step 1-->
                               <div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
                                   <h3 class="mb-10 font-weight-bold text-dark">Collection Center's
                                       details:</h3>
                                   <div class="row">
                                       <div class="col-xl-12">
-                                          <div class="form-group row">
+                                          <!-- <div class="form-group row">
                                               <label class="col-xl-3 col-lg-3 col-form-label">Avatar</label>
                                               <div class="col-lg-9 col-xl-9">
                                                   <div class="image-input image-input-outline" id="kt_contact_add_avatar">
@@ -119,29 +119,16 @@
                                                       </span>
                                                   </div>
                                               </div>
-                                          </div>
+                                          </div> -->
                                           <div class="form-group row fv-plugins-icon-container">
                                               <label class="col-xl-3 col-lg-3 col-form-label">Contact
-                                                  Perosn</label>
+                                                  Person</label>
                                               <div class="col-lg-9 col-xl-9">
-                                                  <div class="row align-items-center">
-                                                      <div class="col-11">
-                                                          <input class="form-control form-control-lg form-control-solid" name="ContactPerosn" type="ContactPerosn" value="Napster">
-                                                          <div class="fv-plugins-message-container">
-                                                          </div>
-                                                      </div>
-                                                      <div class="col-1">
-                                                          <span class="svg-icon svg-icon-primary svg-icon-2x">
-                                                              <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Code\Plus.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                                      <rect x="0" y="0" width="24" height="24"></rect>
-                                                                      <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"></circle>
-                                                                      <path d="M11,11 L11,7 C11,6.44771525 11.4477153,6 12,6 C12.5522847,6 13,6.44771525 13,7 L13,11 L17,11 C17.5522847,11 18,11.4477153 18,12 C18,12.5522847 17.5522847,13 17,13 L13,13 L13,17 C13,17.5522847 12.5522847,18 12,18 C11.4477153,18 11,17.5522847 11,17 L11,13 L7,13 C6.44771525,13 6,12.5522847 6,12 C6,11.4477153 6.44771525,11 7,11 L11,11 Z" fill="#000000"></path>
-                                                                  </g>
-                                                              </svg>
-                                                              <!--end::Svg Icon--></span>
-                                                      </div>
-                                                  </div>
+                                                          <input class="form-control form-control-lg form-control-solid" name="ContactPerosn" type="ContactPerosn" placeholder="e.g Napster"
+                                                          formControlName="ContactPerosn"
+                                                          [ngClass]="{'is-invalid' : submit && val.ContactPerosn.errors}"
+                                                          >
+                                                          <div class="invalid-feedback" *ngIf="submit && val.ContactPerosn.errors">Please enter the contact person name</div>
                                                   <div class="fv-plugins-message-container"></div>
                                               </div>
                                           </div>
@@ -150,7 +137,7 @@
                                               <label class="col-xl-3 col-lg-3 col-form-label">Center's
                                                   Name</label>
                                               <div class="col-lg-9 col-xl-9">
-                                                  <input class="form-control form-control-lg form-control-solid" name="Center" type="text" value="DFL Inc.">
+                                                  <input class="form-control form-control-lg form-control-solid" name="Center" type="text" placeholder="DFL Inc." formControlName="Center">
                                                   <span class="form-text text-muted">If you want
                                                       your invoices addressed to a company. Leave
                                                       blank to use your full name.</span>
@@ -169,7 +156,7 @@
                                                                       <i class="la la-phone"></i>
                                                                   </span>
                                                               </div>
-                                                              <input type="text" class="form-control form-control-lg form-control-solid" name="phone" value="4567896745" placeholder="Phone">
+                                                              <input type="text" class="form-control form-control-lg form-control-solid" name="phone"  placeholder="Phone" formControlName="phone">
                                                           </div>
                                                           <div class="fv-plugins-message-container">
                                                           </div>
@@ -196,7 +183,7 @@
                                               <div class="col-lg-9 col-xl-9">
                                                   <div class="row align-items-center">
                                                       <div class="col-11">
-                                                          <input class="form-control form-control-lg form-control-solid" name="email" type="email" value="Email">
+                                                          <input class="form-control form-control-lg form-control-solid" name="email" type="email" value="Email" formControlName="email">
                                                           <div class="fv-plugins-message-container">
                                                           </div>
                                                       <div class="fv-plugins-message-container"></div></div>
@@ -228,7 +215,7 @@
                                                                       <i class="la la-phone"></i>
                                                                   </span>
                                                               </div>
-                                                              <input type="text" class="form-control form-control-lg form-control-solid" name="Landline No" value="4567896745" placeholder="Landline No">
+                                                              <input type="text" class="form-control form-control-lg form-control-solid" name="Landline No" value="4567896745" placeholder="Landline No" formControlName="Landline">
                                                           </div>
                                                           <div class="fv-plugins-message-container">
                                                           </div>
@@ -271,14 +258,14 @@
                                       Location</h3>
                                   <div class="form-group fv-plugins-icon-container">
                                       <label>Address Line 1</label>
-                                      <input type="text" class="form-control form-control-lg form-control-solid" name="address1" placeholder="Address Line 1" value="Address Line 1">
+                                      <input type="text" class="form-control form-control-lg form-control-solid" name="address1" placeholder="Address Line 1" value="Address Line 1" formControlName="address1">
                                       <span class="form-text text-muted">Please enter your
                                           Address.</span>
                                       <div class="fv-plugins-message-container"></div>
                                   <div class="fv-plugins-message-container"></div></div>
                                   <div class="form-group">
                                       <label>Address Line 2</label>
-                                      <input type="text" class="form-control form-control-lg form-control-solid" name="address2" placeholder="Address Line 2" value="Address Line 2">
+                                      <input type="text" class="form-control form-control-lg form-control-solid" name="address2" placeholder="Address Line 2" value="Address Line 2" formControlName="address2">
                                       <span class="form-text text-muted">Please enter your
                                           Address.</span>
                                   </div>
@@ -286,7 +273,7 @@
                                       <div class="col-xl-6">
                                           <div class="form-group fv-plugins-icon-container">
                                               <label>Postcode</label>
-                                              <input type="text" class="form-control form-control-lg form-control-solid" name="postcode" placeholder="Postcode" value="3000">
+                                              <input type="text" class="form-control form-control-lg form-control-solid" name="postcode" placeholder="Postcode" value="3000" formControlName="postcode">
                                               <span class="form-text text-muted">Please enter your
                                                   Postcode.</span>
                                               <div class="fv-plugins-message-container"></div>
@@ -295,7 +282,7 @@
                                       <div class="col-xl-6">
                                           <div class="form-group fv-plugins-icon-container">
                                               <label>City</label>
-                                              <input type="text" class="form-control form-control-lg form-control-solid" name="city" placeholder="City" value="Melbourne">
+                                              <input type="text" class="form-control form-control-lg form-control-solid" name="city" placeholder="City" value="Melbourne" formControlName="city">
                                               <span class="form-text text-muted">Please enter your
                                                   City.</span>
                                               <div class="fv-plugins-message-container"></div>
@@ -306,7 +293,7 @@
                                       <div class="col-xl-6">
                                           <div class="form-group fv-plugins-icon-container">
                                               <label>State</label>
-                                              <input type="text" class="form-control form-control-lg form-control-solid" name="state" placeholder="State" value="VIC">
+                                              <input type="text" class="form-control form-control-lg form-control-solid" name="state" placeholder="State" value="VIC" formControlName="state">
                                               <span class="form-text text-muted">Please enter your
                                                   State.</span>
                                               <div class="fv-plugins-message-container"></div>
@@ -315,7 +302,7 @@
                                       <div class="col-xl-6">
                                           <div class="form-group fv-plugins-icon-container">
                                               <label>Country</label>
-                                              <select name="country" class="form-control form-control-lg form-control-solid">
+                                              <select formControlName="country" name="country" class="form-control form-control-lg form-control-solid">
                                                   <option value="">Select</option>
                                                   <option value="AF">Afghanistan</option>
                                                   <option value="AX">Åland Islands</option>

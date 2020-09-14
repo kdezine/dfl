@@ -16,13 +16,16 @@
             <h3>Sign In To Dashboard</h3>
             <div class="text-muted font-weight-bold">Enter your details to login to your account:</div>
           </div>
-          <form class="form fv-plugins-bootstrap fv-plugins-framework" id="kt_login_signin_form" novalidate="novalidate">
+          <form class="form fv-plugins-bootstrap fv-plugins-framework" id="kt_login_signin_form" novalidate="novalidate"
+          [formGroup]="LoginForm" (ngSubmit)="login()"
+          >
             <div class="form-group mb-5 fv-plugins-icon-container">
-              <input class="form-control h-auto form-control-solid py-4 px-8" type="text" placeholder="Email" name="username" autocomplete="off">
-            <div class="fv-plugins-message-container"></div></div>
+              <input formControlName="username" class="form-control h-auto form-control-solid py-4 px-8" type="text" placeholder="Email" name="username" autocomplete="off" [ngClass]="{'invalid' : submit && val.username.errors}">
+            <div class="fv-plugins-message-container"><span *ngIf="submit && val.username.errors">Username Required</span></div>
+          </div>
             <div class="form-group mb-5 fv-plugins-icon-container">
-              <input class="form-control h-auto form-control-solid py-4 px-8" type="password" placeholder="Password" name="password">
-            <div class="fv-plugins-message-container"></div></div>
+              <input formControlName="password" class="form-control h-auto form-control-solid py-4 px-8" type="password" placeholder="Password" name="password" [ngClass]="{'invalid' : submit && val.password.errors}">
+            <div class="fv-plugins-message-container"><span *ngIf="submit && val.password.errors">Password Required</span></div></div>
             <div class="form-group d-flex flex-wrap justify-content-between align-items-center">
               <div class="checkbox-inline">
                 <label class="checkbox m-0 text-muted">

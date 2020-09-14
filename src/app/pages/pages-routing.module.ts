@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './_layout/layout.component';
 
 const routes: Routes = [
+  
   {
     path: '',
     component: LayoutComponent,
@@ -78,7 +79,7 @@ const routes: Routes = [
           import('./tests/list/list.module').then((m) => m.ListModule),
       },
       {
-        path: 'test-view',
+        path: 'test-view/:id/:name',
         loadChildren: () =>
           import('./tests/view/view.module').then((m) => m.ViewModule),
       },
@@ -128,7 +129,7 @@ const routes: Routes = [
           import('./collection/list/list.module').then((m) => m.ListCollectionModule),
       },
       {
-        path: 'collection-view',
+        path: 'collection-view/',
         loadChildren: () =>
           import('./collection/view/view.module').then((m) => m.ViewCollectionModule),
       },
@@ -196,6 +197,11 @@ const routes: Routes = [
         path: 'view-leads',
         loadChildren: () =>
           import('./leads/leads.module').then((m) => m.ALeadsModule),
+      },
+      {
+        path: 'leads',
+        loadChildren: () =>
+          import('./leads/list/list.module').then((m) => m.ListModule),
       },
       {
         path: 'builder',

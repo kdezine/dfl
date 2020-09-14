@@ -7,45 +7,72 @@
                   <tr class="datatable-row" style="left: 0px;">
                       <th data-field="RecordID" class="datatable-cell-left datatable-cell datatable-cell-sort datatable-cell-sorted" data-sort="asc"><span style="width: 40px;">#<i class="flaticon2-arrow-up"></i></span></th>
                       <th data-field="OrderID" class="datatable-cell datatable-cell-sort">
-                          <span style="width: 250px;">Test Name</span></th>
-                      <th data-field="Price" class="datatable-cell datatable-cell-sort">
-                          <span style="width: 158px;">Price</span></th>
-                      <th data-field="Taxes" class="datatable-cell datatable-cell-sort"><span style="width: 158px;">Taxes</span></th>
-                      <th data-field="FinalPrice" class="datatable-cell datatable-cell-sort"><span style="width: 158px;">Final Price</span></th>
-                      
+                          <span style="width: 250px;">Customer</span></th>
+                      <th data-field="Email" class="datatable-cell datatable-cell-sort">
+                          <span style="width: 158px;">Email</span></th>
+                      <th data-field="Phone" class="datatable-cell datatable-cell-sort">
+                          <span style="width: 158px;">Phone</span></th>
+                      <th data-field="Location" class="datatable-cell datatable-cell-sort">
+                          <span style="width: 158px;">Location</span></th>
+                      <th data-field="Date" class="datatable-cell datatable-cell-sort">
+                          <span style="width: 158px;">Date</span></th>
+
+                      <th data-field="Status" class="datatable-cell datatable-cell-sort">
+                          <span style="width: 158px;">Status</span></th>
                       <th data-field="Actions" data-autohide-disabled="false" class="datatable-cell datatable-cell-sort"><span style="width: 130px;">Actions</span></th>
                   </tr>
               </thead>
               <tbody class="datatable-body" >
-                  <tr data-row="0" class="datatable-row" style="left: 0px;" *ngFor="let item of testlist; index as i">
+                  <tr data-row="0" class="datatable-row" style="left: 0px;" *ngFor="let item of leadlist; index as i">
                       <td class="datatable-cell-sorted datatable-cell-left datatable-cell" data-field="RecordID" aria-label="1"><span style="width: 40px;"><span class="font-weight-bolder">{{i}}</span></span></td>
                       <td data-field="OrderID" aria-label="64616-103" class="datatable-cell"><span style="width: 250px;">
-                          <div class="font-weight-bold font-size-lg">{{item.TestName}}
-                          </div>
-                          </span></td>
-                      <td data-field="Price" aria-label="Brazil" class="datatable-cell">
-                          <span style="width: 158px;">
-                              <div class="font-weight-bold font-size-lg">{{item.Price}}
+                              <div class="d-flex align-items-center">
+
+                                  <div class="ml-3">
+                                      <div class="text-dark-75 font-weight-bolder font-size-lg mb-0">
+                                          {{item.Name}}</div> <a href="#" class="text-muted font-weight-bold text-hover-primary">Lead
+                                          ID <span class="leadno">{{item.LeadId}}</span></a>
+                                  </div>
                               </div>
-                              </span></td>
-                      <td data-field="Taxes" aria-label="10/15/2017" class="datatable-cell"><span style="width: 158px;">
-                          <div class="font-weight-bold font-size-lg">{{item.Tax}}
-                          </div>
                           </span></td>
-                      <td data-field="FinalPrice" aria-label="Jaipur" class="datatable-cell"><span style="width: 158px;">
-                          <div class="font-weight-bold font-size-lg">{{item.FinalPrice}}
-                          </div>
+                      <td data-field="Email" aria-label="Email" class="datatable-cell">
+                          <span style="width: 158px;">
+                              <div class="font-weight-bold text-muted">{{item.Email}}
+                              </div>
                           </span></td>
+                      <td data-field="Phone" aria-label="Phone" class="datatable-cell">
+                          <span style="width: 158px;">
+                              <div class="font-weight-bold text-muted">{{item.ContactPhone}}
+                              </div>
+                          </span></td>
+                      <td data-field="Location" aria-label="City" class="datatable-cell">
+                          <span style="width: 158px;">
+                              <div class="font-weight-bolder font-size-lg mb-0">{{item.City}}
+                              </div>
+                              <div class="font-weight-bold text-muted">{{item.State}}</div>
+                          </span></td>
+                      <td data-field="Date" aria-label="10/15/2017" class="datatable-cell"><span style="width: 158px;">
+                              <div class="font-weight-bolder text-primary mb-0">{{item.ModifyDate}}
+                              </div>
+                              <div class="text-muted">Good</div>
+                          </span></td>
+
+                      <td data-field="Status" aria-label="5" class="datatable-cell"><span style="width: 158px;"><span class="label label-lg font-weight-bold  label-light-info label-inline">Info</span></span>
+                      </td>
                       <td data-field="Actions" data-autohide-disabled="false" aria-label="null" class="datatable-cell"><span style="overflow: visible; position: relative; width: 130px;">
-                            <a [routerLink]="['/text-view', item.TestId, item.TestName]" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon mr-2" data-toggle="dropdown"> <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\General\Visible.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                              <rect x="0" y="0" width="24" height="24"></rect>
-                                              <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-                                              <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"></path>
-                                          </g>
-                                      </svg><!--end::Svg Icon--></span> </a>
-                                  
-                              <a href="javascript:;" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon mr-2" title="Edit details"> <span class="svg-icon svg-icon-md"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                              <div class="dropdown dropdown-inline"> <a href="javascript:;" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon mr-2" data-toggle="dropdown"> <span class="svg-icon svg-icon-primary svg-icon-2x">
+                                          <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\General\Visible.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                  <rect x="0" y="0" width="24" height="24"></rect>
+                                                  <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                  <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"></path>
+                                              </g>
+                                          </svg>
+                                          <!--end::Svg Icon--></span> </a>
+                                  <div>
+                                      <a href="#" alt="view"></a>
+                                  </div>
+                              </div> <a href="javascript:;" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon mr-2" title="Edit details"> <span class="svg-icon svg-icon-md"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                               <rect x="0" y="0" width="24" height="24">
                                               </rect>
@@ -64,6 +91,7 @@
                                       </svg> </span> </a>
                           </span></td>
                   </tr>
+                 
               </tbody>
           </table>
           <div class="datatable-pager datatable-paging-loaded" hidden>
@@ -83,7 +111,7 @@
                   <li><a title="Last" class="datatable-pager-link datatable-pager-link-last" data-page="35"><i class="flaticon2-fast-next"></i></a></li>
               </ul>
               <div class="datatable-pager-info">
-                  <div class="dropdown bootstrap-select datatable-pager-size" style="width: 60px;"><div class="dropdown bootstrap-select datatable-pager-size" style="width: 60px;"><div class="dropdown bootstrap-select datatable-pager-size" style="width: 60px;"><select class="selectpicker datatable-pager-size" title="Select page size" data-width="60px" data-container="body" data-selected="10"><option class="bs-title-option" value=""></option><option class="bs-title-option" value=""></option>
+                  <div class="dropdown bootstrap-select datatable-pager-size" style="width: 60px;"><div class="dropdown bootstrap-select datatable-pager-size" style="width: 60px;"><select class="selectpicker datatable-pager-size" title="Select page size" data-width="60px" data-container="body" data-selected="10"><option class="bs-title-option" value=""></option>
                           <option class="bs-title-option" value=""></option>
                           <option value="5">5</option>
                           <option value="10">10</option>
@@ -91,7 +119,7 @@
                           <option value="30">30</option>
                           <option value="50">50</option>
                           <option value="100">100</option>
-                      </select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light bs-placeholder" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Select page size"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select page size</div></div> </div></button><div class="dropdown-menu "><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light bs-placeholder" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Select page size"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select page size</div></div> </div></button><div class="dropdown-menu "><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Select page size">
+                      </select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light bs-placeholder" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Select page size"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select page size</div></div> </div></button><div class="dropdown-menu "><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Select page size">
                           <div class="filter-option">
                               <div class="filter-option-inner">
                                   <div class="filter-option-inner-inner">10</div>

@@ -33,19 +33,10 @@ export const DynamicAsideMenuConfig = {
       title: 'View All Lead',
       root: true,
       bullet: 'dot',
-      page: '/view-leads',
+      page: '/leads',
       icon: 'flaticon2-digital-marketing',
       svg: './assets/media/svg/icons/Shopping/Bitcoin.svg',
-      submenu: [
-        {
-          title: 'List View',
-          page: '/view-leads'
-        },
-        {
-          title: 'Table View',
-          page: '/view-leads'
-        }
-      ]
+ 
     },
     { section: 'COLLECTION CENTER' },
     {
@@ -56,22 +47,6 @@ export const DynamicAsideMenuConfig = {
       root: true,
       permission: 'accessToECommerceModule',
       page: '/collection-list',
-    },
-    {
-      title: 'List Datatable',
-      root: true,
-      bullet: 'dot',
-      icon: 'flaticon2-user-outline-symbol',
-      svg: './assets/media/svg/icons/General/User.svg',
-      page: '/collection-table',
-    },
-    {
-      title: 'View Contact',
-      root: true,
-      bullet: 'dot',
-      icon: 'flaticon2-user-outline-symbol',
-      svg: './assets/media/svg/icons/General/User.svg',
-      page: '/collection-view',
     },
     {
       title: 'Add Contact',
@@ -150,15 +125,15 @@ export const DynamicAsideMenuConfig = {
       permission: 'accessToECommerceModule',
       page: '/test-edit',
     }, 
-    {
-      title: 'View Test',
-      bullet: 'dot',
-      icon: 'flaticon2-list-2',
-      svg: './assets/media/svg/icons/Shopping/Cart3.svg',
-      root: true,
-      permission: 'accessToECommerceModule',
-      page: '/test-view',
-    },   
+    // {
+    //   title: 'View Test',
+    //   bullet: 'dot',
+    //   icon: 'flaticon2-list-2',
+    //   svg: './assets/media/svg/icons/Shopping/Cart3.svg',
+    //   root: true,
+    //   permission: 'accessToECommerceModule',
+    //   page: '/test-view',
+    // },   
     {
       title: 'View All Tests',
       bullet: 'dot',
