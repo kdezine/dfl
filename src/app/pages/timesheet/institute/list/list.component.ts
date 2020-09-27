@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { GetInstituteService } from '../../../../../services/getinstitutes'
 
+
 @Component({
   selector: 'app-listinstitute',
   templateUrl: './list.component.html',
@@ -14,6 +15,7 @@ export class ListInstituteComponent implements OnInit {
    }
   ngOnInit(): void {
   }
+
   InsData()
   {
     

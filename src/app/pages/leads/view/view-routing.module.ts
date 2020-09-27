@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ViewInstituteComponent } from './view.component';
-
+import { ViewComponent } from './view.component';
 
 const routes: Routes = [{
-  path : '',
-  component : ViewInstituteComponent
+  path: '',
+  component: ViewComponent
 }];
 
 @NgModule({

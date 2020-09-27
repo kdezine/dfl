@@ -18,18 +18,17 @@
                       <div class="mr-3">
                           <div class="d-flex align-items-center mr-3">
                               <!--begin::Name-->
-                              <a href="#" class="d-flex align-items-center text-dark text-hover-primary font-size-h5 font-weight-bold mr-3">
-                                  David Smith
+                              <a  class="d-flex align-items-center text-dark text-hover-primary font-size-h5 font-weight-bold mr-3">
+                                  David
                               </a>
-                              <span class="text-muted font-weight-bold">Company
-                                  name</span>
+                              <span class="text-muted font-weight-bold">Company Name</span>
                               <!--end::Name-->
                               
                           </div>
 
                           <!--begin::Contacts-->
                           <div class="d-flex flex-wrap my-2">
-                              <a href="#" class="text-muted text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
+                              <a  class="text-muted text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
                                   <span class="svg-icon svg-icon-md svg-icon-gray-500 mr-1">
                                       <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Mail-notification.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -40,7 +39,7 @@
                                       </svg>
                                       <!--end::Svg Icon--></span> david.s@loop.com
                               </a>
-                              <a href="#" class="text-muted text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
+                              <a  class="text-muted text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
                                   <span class="svg-icon svg-icon-md svg-icon-gray-500 mr-1">
                                       <!--begin::Svg Icon | path:assets/media/svg/icons/General/Lock.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -53,7 +52,7 @@
                                       </svg>
                                       <!--end::Svg Icon--></span>Contact no
                               </a>
-                              <a href="#" class="text-muted text-hover-primary font-weight-bold">
+                              <a  class="text-muted text-hover-primary font-weight-bold">
                                   <span class="svg-icon svg-icon-md svg-icon-gray-500 mr-1">
                                       <!--begin::Svg Icon | path:assets/media/svg/icons/Map/Marker2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -95,15 +94,15 @@
       <div class="col-xl-12">
           <!--begin::Card-->
           <div class="card card-custom gutter-b">
-              <!--begin::Header-->
+              <!-- begin::Header -->
               <div class="card-header card-header-tabs-line">
-                  <div class="card-toolbar">
+                  <div class="card-toolbar" >
                       <ul class="nav nav-tabs nav-tabs-space-lg nav-tabs-line nav-bold nav-tabs-line-3x" role="tablist">
-                          <li class="nav-item">
-                              <a class="nav-link active" data-toggle="tab" href="#kt_apps_contacts_view_tab_1">
+                          <li class="nav-item" (click)="tabcount = 1">
+                              <a class="nav-link " data-toggle="tab"  [ngClass]="tabcount == 1 ? 'active' : ''">
                                   <span class="nav-icon mr-2">
                                       <span class="svg-icon mr-3">
-                                          <!--begin::Svg Icon | path:assets/media/svg/icons/General/Notification2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                               <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                   <rect x="0" y="0" width="24" height="24">
                                                   </rect>
@@ -111,17 +110,17 @@
                                                   <circle fill="#000000" opacity="0.3" cx="18.5" cy="5.5" r="2.5"></circle>
                                               </g>
                                           </svg>
-                                          <!--end::Svg Icon--></span> </span>
+                                          </span> </span>
                                   <span class="nav-text">
                                       Notes
                                   </span>
                               </a>
                           </li>
-                          <li class="nav-item mr-3">
-                              <a class="nav-link" data-toggle="tab" href="#kt_apps_contacts_view_tab_2">
+                          <li class="nav-item mr-3"  (click)="tabcount = 2">
+                              <a class="nav-link" data-toggle="tab" [ngClass]="tabcount == 2 ? 'active' : ''">
                                   <span class="nav-icon mr-2">
                                       <span class="svg-icon mr-3">
-                                          <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Chat-check.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                               <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                   <rect x="0" y="0" width="24" height="24">
                                                   </rect>
@@ -129,7 +128,7 @@
                                                   <path d="M2,11.8650466 L2,6 C2,4.34314575 3.34314575,3 5,3 L19,3 C20.6568542,3 22,4.34314575 22,6 L22,15 C22,15.0032706 21.9999948,15.0065399 21.9999843,15.009808 L22.0249378,15 L22.0249378,19.5857864 C22.0249378,20.1380712 21.5772226,20.5857864 21.0249378,20.5857864 C20.7597213,20.5857864 20.5053674,20.4804296 20.317831,20.2928932 L18.0249378,18 L12.9835977,18 C12.7263047,14.0909841 9.47412135,11 5.5,11 C4.23590829,11 3.04485894,11.3127315 2,11.8650466 Z M6,7 C5.44771525,7 5,7.44771525 5,8 C5,8.55228475 5.44771525,9 6,9 L15,9 C15.5522847,9 16,8.55228475 16,8 C16,7.44771525 15.5522847,7 15,7 L6,7 Z" fill="#000000"></path>
                                               </g>
                                           </svg>
-                                          <!--end::Svg Icon--></span> </span>
+                                          </span> </span>
                                   <span class="nav-text">
                                       Test information
                                   </span>
@@ -138,13 +137,14 @@
                       </ul>
                   </div>
               </div>
-              <!--end::Header-->
+              <!-- end::Header -->
 
               <!--begin::Body-->
               <div class="card-body px-0">
                   <div class="tab-content pt-5">
+
                       <!--begin::Tab Content-->
-                      <div class="tab-pane active" id="kt_apps_contacts_view_tab_1" role="tabpanel">
+                      <div class="tab-pane " id="kt_apps_contacts_view_tab_1" role="tabpanel" [ngClass]="tabcount == 1 ? 'active' : ''">
                           <div class="container">
                               <form class="form">
                                   <div class="form-group">
@@ -152,9 +152,9 @@
                                   </div>
                                   <div class="row">
                                       <div class="col">
-                                          <a href="#" class="btn btn-light-primary font-weight-bold">Add
+                                          <a  class="btn btn-light-primary font-weight-bold">Add
                                               notes</a>
-                                          <a href="#" class="btn btn-clean font-weight-bold">Cancel</a>
+                                          <a  class="btn btn-clean font-weight-bold">Cancel</a>
                                       </div>
                                   </div>
                               </form>
@@ -171,7 +171,7 @@
                                           <div class="timeline-content">
                                               <div class="d-flex align-items-center justify-content-between mb-3">
                                                   <div class="mr-2">
-                                                      <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">
+                                                      <a  class="text-dark-75 text-hover-primary font-weight-bold">
                                                           New order has been placed
                                                       </a>
                                                       <span class="text-muted ml-2">
@@ -180,7 +180,7 @@
                                                       <span class="label label-light-success font-weight-bolder label-inline ml-2">new</span>
                                                   </div>
                                                   <div class="dropdown ml-2" data-toggle="tooltip" title="" data-placement="left" data-original-title="Quick actions">
-                                                      <a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      <a  class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                           <i class="ki ki-more-hor icon-md"></i>
                                                       </a>
                                                       <div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -194,35 +194,35 @@
                                                               <li class="navi-separator mb-3 opacity-70">
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-success">Customer</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-danger">Partner</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-warning">Suplier</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-primary">Member</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-dark">Staff</span>
                                                                       </span>
@@ -231,7 +231,7 @@
                                                               <li class="navi-separator mt-3 opacity-70">
                                                               </li>
                                                               <li class="navi-footer py-4">
-                                                                  <a class="btn btn-clean font-weight-bold btn-sm" href="#">
+                                                                  <a class="btn btn-clean font-weight-bold btn-sm" >
                                                                       <i class="ki ki-plus icon-sm"></i>
                                                                       Add new
                                                                   </a>
@@ -257,7 +257,7 @@
                                           <div class="timeline-content">
                                               <div class="d-flex align-items-center justify-content-between mb-3">
                                                   <div class="mr-2">
-                                                      <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">
+                                                      <a  class="text-dark-75 text-hover-primary font-weight-bold">
                                                           Member has sent a request.
                                                       </a>
                                                       <span class="text-muted ml-2">
@@ -266,7 +266,7 @@
                                                       <span class="label label-light-danger font-weight-bolder label-inline ml-2">pending</span>
                                                   </div>
                                                   <div class="dropdown ml-2" data-toggle="tooltip" title="" data-placement="left" data-original-title="Quick actions">
-                                                      <a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      <a  class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                           <i class="ki ki-more-hor icon-md"></i>
                                                       </a>
                                                       <div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -280,35 +280,35 @@
                                                               <li class="navi-separator mb-3 opacity-70">
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-success">Customer</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-danger">Partner</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-warning">Suplier</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-primary">Member</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-dark">Staff</span>
                                                                       </span>
@@ -317,7 +317,7 @@
                                                               <li class="navi-separator mt-3 opacity-70">
                                                               </li>
                                                               <li class="navi-footer py-4">
-                                                                  <a class="btn btn-clean font-weight-bold btn-sm" href="#">
+                                                                  <a class="btn btn-clean font-weight-bold btn-sm" >
                                                                       <i class="ki ki-plus icon-sm"></i>
                                                                       Add new
                                                                   </a>
@@ -343,7 +343,7 @@
                                           <div class="timeline-content">
                                               <div class="d-flex align-items-center justify-content-between mb-3">
                                                   <div class="mr-2">
-                                                      <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">
+                                                      <a  class="text-dark-75 text-hover-primary font-weight-bold">
                                                           System deployment has been
                                                           completed.
                                                       </a>
@@ -353,7 +353,7 @@
                                                       <span class="label label-light-warning font-weight-bolder label-inline ml-2">done</span>
                                                   </div>
                                                   <div class="dropdown ml-2" data-toggle="tooltip" title="" data-placement="left" data-original-title="Quick actions">
-                                                      <a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      <a  class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                           <i class="ki ki-more-hor icon-md"></i>
                                                       </a>
                                                       <div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -367,35 +367,35 @@
                                                               <li class="navi-separator mb-3 opacity-70">
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-success">Customer</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-danger">Partner</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-warning">Suplier</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-primary">Member</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-dark">Staff</span>
                                                                       </span>
@@ -404,7 +404,7 @@
                                                               <li class="navi-separator mt-3 opacity-70">
                                                               </li>
                                                               <li class="navi-footer py-4">
-                                                                  <a class="btn btn-clean font-weight-bold btn-sm" href="#">
+                                                                  <a class="btn btn-clean font-weight-bold btn-sm" >
                                                                       <i class="ki ki-plus icon-sm"></i>
                                                                       Add new
                                                                   </a>
@@ -430,7 +430,7 @@
                                           <div class="timeline-content">
                                               <div class="d-flex align-items-center justify-content-between mb-3">
                                                   <div class="mr-2">
-                                                      <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">
+                                                      <a  class="text-dark-75 text-hover-primary font-weight-bold">
                                                           Database backup has been completed.
                                                       </a>
                                                       <span class="text-muted ml-2">
@@ -439,7 +439,7 @@
                                                       <span class="label label-light-primary font-weight-bolder label-inline ml-2">delivered</span>
                                                   </div>
                                                   <div class="dropdown ml-2" data-toggle="tooltip" title="" data-placement="left" data-original-title="Quick actions">
-                                                      <a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      <a  class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                           <i class="ki ki-more-hor icon-md"></i>
                                                       </a>
                                                       <div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -453,35 +453,35 @@
                                                               <li class="navi-separator mb-3 opacity-70">
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-success">Customer</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-danger">Partner</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-warning">Suplier</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-primary">Member</span>
                                                                       </span>
                                                                   </a>
                                                               </li>
                                                               <li class="navi-item">
-                                                                  <a href="#" class="navi-link">
+                                                                  <a  class="navi-link">
                                                                       <span class="navi-text">
                                                                           <span class="label label-xl label-inline label-light-dark">Staff</span>
                                                                       </span>
@@ -490,7 +490,7 @@
                                                               <li class="navi-separator mt-3 opacity-70">
                                                               </li>
                                                               <li class="navi-footer py-4">
-                                                                  <a class="btn btn-clean font-weight-bold btn-sm" href="#">
+                                                                  <a class="btn btn-clean font-weight-bold btn-sm" >
                                                                       <i class="ki ki-plus icon-sm"></i>
                                                                       Add new
                                                                   </a>
@@ -517,7 +517,7 @@
                       <!--end::Tab Content-->
 
                       <!--begin::Tab Content-->
-                      <div class="tab-pane" id="kt_apps_contacts_view_tab_2" role="tabpanel">
+                      <div class="tab-pane" role="tabpanel"  [ngClass]="tabcount == 2 ? 'active' : ''">
                           <div class="container">
                               <form class="form">
                                   <div class="row">
@@ -530,7 +530,7 @@
                                       <label class="col-xl-3 col-lg-3 col-form-label text-center">
                                           Test Name</label>
                                       <div class="col-lg-9 col-xl-6">
-                                          <input class="form-control form-control-lg form-control-solid" type="text" value="Genetic">
+                                          <input class="form-control form-control-lg form-control-solid" type="text" value="{{testData.TestName}}">
                                       </div>
                                   </div>
 
@@ -540,7 +540,7 @@
                                       <div class="col-lg-9 col-xl-6">
                                           <div class="input-group input-group-lg input-group-solid">
                                               <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                                              <input type="text" class="form-control form-control-lg form-control-solid" value="25000" placeholder="Price">
+                                              <input type="text" class="form-control form-control-lg form-control-solid" value="{{testData.Price}}" placeholder="Price">
                                           </div>
               
                                       </div>
@@ -551,7 +551,7 @@
                                       <div class="col-lg-9 col-xl-6">
                                           <div class="input-group input-group-lg input-group-solid">
                                               <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
-                                              <input type="text" class="form-control form-control-lg form-control-solid" value="4000" placeholder="Taxes">
+                                              <input type="text" class="form-control form-control-lg form-control-solid" value="{{testData.Tax}}" placeholder="Taxes">
                                           </div>
                                       </div>
                                   </div>
@@ -560,7 +560,7 @@
                                       <div class="col-lg-9 col-xl-6">
                                           <div class="input-group input-group-lg input-group-solid">
                                               <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                                              <input type="text" class="form-control form-control-lg form-control-solid" value="30000" placeholder="Final price">
+                                              <input type="text" class="form-control form-control-lg form-control-solid" value="{{testData.FinalPrice}}" placeholder="Final price">
                                           </div>
                                       </div>
                                   </div>
@@ -568,7 +568,7 @@
                                       <label class="col-xl-3 col-lg-3 text-center col-form-label">Information</label>
                                       <div class="col-lg-9 col-xl-6">
                                           <div class="form-group">
-                                              <textarea class="form-control form-control-solid" rows="3"></textarea>
+                                              <textarea class="form-control form-control-solid" rows="3">{{testData.Comments}}</textarea>
                                           </div>
                               
                                       </div>

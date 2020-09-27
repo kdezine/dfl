@@ -9,6 +9,11 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
+        path: 'calendar',
+        loadChildren: () =>
+          import('./calendar/calendar.module').then((m) => m.CalendarModule),
+      },
+      {
         path: 'reports/timesheet',
         loadChildren: () =>
           import('./reports/timesheet/timesheet.module').then((m) => m.TimesheetModule),
@@ -54,14 +59,14 @@ const routes: Routes = [
           import('./timesheet/institute/list/list.module').then((m) => m.ListModule),
       },
       {
-        path: 'institute/view',
+        path: 'institute/view/:id/:name',
         loadChildren: () =>
           import('./timesheet/institute/view/view.module').then((m) => m.ViewModule),
       },
       {
-        path: 'institute/edit',
+        path: 'institute/edit/:id',
         loadChildren: () =>
-          import('./timesheet/institute/edit/edit.module').then((m) => m.EditModule),
+        import('./timesheet/institute/add/add.module').then((m) => m.AddModule),
       },
       {
         path: 'institute/add',
@@ -89,9 +94,9 @@ const routes: Routes = [
           import('./tests/create/create.module').then((m) => m.CreateModule),
       },
       {
-        path: 'test-edit',
+        path: 'edit-test/:id',
         loadChildren: () =>
-          import('./tests/edit/edit.module').then((m) => m.EditModule),
+          import('./tests/create/create.module').then((m) => m.CreateModule),
       },
       {
         path: 'referral-edit',
@@ -129,14 +134,14 @@ const routes: Routes = [
           import('./collection/list/list.module').then((m) => m.ListCollectionModule),
       },
       {
-        path: 'collection-view/',
+        path: 'collection-view/:id/:name',
         loadChildren: () =>
           import('./collection/view/view.module').then((m) => m.ViewCollectionModule),
       },
       {
-        path: 'collection-edit',
+        path: 'collection-edit/:id',
         loadChildren: () =>
-          import('./collection/edit/edit.module').then((m) => m.EditCollectionModule),
+        import('./collection/add/add.module').then((m) => m.AddCollectionModule),
       },
       {
         path: 'collection-add',
@@ -151,7 +156,12 @@ const routes: Routes = [
       {
         path: 'create-lead',
         loadChildren: () =>
-          import('./create-lead/create-lead.module').then((m) => m.CreateLeadModule),
+          import('./leads/create-lead/create-lead.module').then((m) => m.CreateLeadModule),
+      },
+      {
+        path: 'edit-lead/:id',
+        loadChildren: () =>
+          import('./leads/create-lead/create-lead.module').then((m) => m.CreateLeadModule),
       },
       {
         path: 'users',
@@ -197,6 +207,11 @@ const routes: Routes = [
         path: 'view-leads',
         loadChildren: () =>
           import('./leads/leads.module').then((m) => m.ALeadsModule),
+      },
+      {
+        path: 'leads/lead-detail/:id/:name',
+        loadChildren: () =>
+          import('./leads/view/view.module').then((m) => m.ViewModule),
       },
       {
         path: 'leads',

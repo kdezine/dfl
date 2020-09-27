@@ -23,6 +23,13 @@ import { SplashScreenModule } from './_metronic/partials/layout/splash-screen/sp
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
+// import {DayGridView} from '@fullcalendar/daygrid'; // a plugin
+// import {interactionPlugin} from '@fullcalendar/interaction'; // a plugin
+
+// FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+//   DayGridView,
+//   interactionPlugin
+// ]);
 
 function appInitializer(authService: AuthService) {
   return () => {
@@ -54,6 +61,7 @@ export function getHighlightLanguages() {
     TranslateModule.forRoot(),
     HttpClientModule,
     HighlightModule,
+    
     environment.isMockEnabled
       ? HttpClientInMemoryWebApiModule.forRoot(FakeAPIService, {
           passThruUnknownUrl: true,

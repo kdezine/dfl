@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CollectionListService } from "../../../../services/collectionlist";
+import { ViewCollectionService } from "../../../../services/viewcollection";
 
 @Component({
   selector: 'app-viewcollection',
@@ -8,25 +8,25 @@ import { CollectionListService } from "../../../../services/collectionlist";
   styleUrls: ['./view.component.scss']
 })
 export class ViewCollectionComponent implements OnInit {
-  cdata : any = []
-  myParam: string;
-  constructor(
-    private router: ActivatedRoute,
-    private collectionlist : CollectionListService)
-    { 
-      this.GetcollectionData()
-    }
+  id : any
+  name : any
+  testData : any 
+  tabcount = 2
+  constructor(private _Activatedroute:ActivatedRoute,
+    private _router:Router,
+    private _viewcollection:ViewCollectionService) { }
 
-  ngOnInit(): void {
-  
-  }
-
-  GetcollectionData()
-  {
-    this.collectionlist.GetCollections().subscribe((Response) =>
-    {
-      this.cdata = Response.ResponseData
+    ngOnInit(): void {
+      this._Activatedroute.paramMap.subscribe(params => { 
+        this.id = params.get('id')
+        this.name = params.get('name')
+        this.viewData();
     })
-  }
+    }
+    viewData() {
+      this._viewcollection.ViewCollection(this.id, this.name).subscribe((res) => {
+        this.testData = res.ResponseData[0];
+      });
+    }
 
 }

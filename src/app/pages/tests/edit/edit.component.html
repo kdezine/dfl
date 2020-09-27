@@ -96,8 +96,8 @@
       <div class="card-header card-header-tabs-line">
           <div class="card-toolbar">
               <ul class="nav nav-tabs nav-tabs-space-lg nav-tabs-line nav-tabs-bold nav-tabs-line-3x " role="tablist">
-                  <li class="nav-item mr-3">
-                      <a class="nav-link active" data-toggle="tab" href="#kt_apps_contacts_view_tab_2">
+                  <li class="nav-item mr-3" (click)="tabcount = 1">
+                      <a class="nav-link" data-toggle="tab"  [ngClass]="tabcount == 1 ? 'active' : ''">
                           <span class="nav-icon mr-2">
                               <span class="svg-icon mr-3">
                                   <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Chat-check.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -111,8 +111,8 @@
                           <span class="nav-text font-weight-bold">Personal</span>
                       </a>
                   </li>
-                  <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#kt_apps_contacts_view_tab_1">
+                  <li class="nav-item" (click)="tabcount = 2">
+                      <a class="nav-link" data-toggle="tab"   [ngClass]="tabcount == 2 ? 'active' : ''">
                           <span class="nav-icon mr-2">
                               <span class="svg-icon mr-3">
                                   <!--begin::Svg Icon | path:assets/media/svg/icons/General/Notification2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -135,8 +135,8 @@
       <div class="card-body px-0">
           <div class="tab-content pt-5">
               <!--begin::Tab Content-->
-              <div class="tab-pane active" id="kt_apps_contacts_view_tab_2" role="tabpanel">
-                  <form class="form">
+              <div class="tab-pane" id="kt_apps_contacts_view_tab_2" role="tabpanel"  [ngClass]="tabcount == 1 ? 'active' : ''">
+                  <form class="form" (ngSubmit)="edittest()" [formGroup]="EditTestForm" novalidate="novalidate">
                       <!--begin::Heading-->
                       <div class="row">
                           <div class="col-lg-12 text-center pb-15">
@@ -148,55 +148,58 @@
                           <label class="col-xl-3 col-lg-3 col-form-label text-center">
                               Test Name</label>
                           <div class="col-lg-9 col-xl-6">
-                              <input class="form-control form-control-lg form-control-solid" type="text" value="Genetic">
+                              <input class="form-control form-control-lg form-control-solid" type="text"  name="TestName" [(ngModel)]="editData.TestName" formControlName="TestName" [ngClass]="{'is-invalid' : submit && val.TestName.errors}">
+                              <div class="invalid-feedback" *ngIf="submit && val.TestName.errors">Please enter the Test Name</div>
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-xl-3 col-lg-3 col-form-label text-center">
                               Price</label>
                           <div class="col-lg-9 col-xl-6">
-                              <div class="input-group input-group-lg input-group-solid">
-                                  <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                                  <input type="text" class="form-control form-control-lg form-control-solid" value="25000" placeholder="Price">
-                              </div>
+                            <input type="number" class="form-control form-control-lg form-control-solid" [(ngModel)]="editData.Price" placeholder="Price" name="Price" formControlName="Price" [ngClass]="{'is-invalid' : submit && val.Price.errors}">
+                            <div class="invalid-feedback" *ngIf="submit && val.Price.errors">Please enter the Price</div>
 
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-xl-3 col-lg-3 col-form-label text-center">Taxes</label>
                           <div class="col-lg-9 col-xl-6">
-                              <div class="input-group input-group-lg input-group-solid">
-                                  <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
-                                  <input type="text" class="form-control form-control-lg form-control-solid" value="4000" placeholder="Taxes">
-                              </div>
+                            <input type="number" class="form-control form-control-lg form-control-solid"  [(ngModel)]="editData.Tax" placeholder="Taxes" name="Tax" formControlName="Tax" [ngClass]="{'is-invalid' : submit && val.Tax.errors}">
+                            <div class="invalid-feedback" *ngIf="submit && val.Tax.errors">Please enter the Tax</div>
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-xl-3 col-lg-3 text-center col-form-label">Final
                               Price</label>
                           <div class="col-lg-9 col-xl-6">
-                              <div class="input-group input-group-lg input-group-solid">
-                                  <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                                  <input type="text" class="form-control form-control-lg form-control-solid" value="30000" placeholder="Final price">
-                              </div>
+                            <input type="text" class="form-control form-control-lg form-control-solid"  [(ngModel)]="editData.FinalPrice" placeholder="Final price" name="FinalPrice" formControlName="FinalPrice" [ngClass]="{'is-invalid' : submit && val.FinalPrice.errors}">
+                            <div class="invalid-feedback" *ngIf="submit && val.FinalPrice.errors">Please enter the Final Price</div>
                           </div>
                       </div>
                       <div class="form-group row ">
                           <label class="col-xl-3 col-lg-3 text-center col-form-label">Information</label>
                           <div class="col-lg-9 col-xl-6">
                               <div class="form-group">
-                                  <textarea class="form-control form-control-solid" rows="3"></textarea>
+                                  <textarea class="form-control form-control-solid" rows="3" name="Comments" formControlName="Comments" [ngClass]="{'is-invalid' : submit && val.Comments.errors}" [(ngModel)]="editData.Comments"></textarea>
+                                  <div class="invalid-feedback" *ngIf="submit && val.Comments.errors">Please enter the Comments</div>
                               </div>
-
                           </div>
                       </div>
+                      <input type="hidden" name="statusType" value="2" formControlName="statusType">
+                      <div class="form-group row ">
+                        <div class="col-lg-9 offset-lg-3 offset-xl-6 col-xl-6">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </div>
                   </form>
               </div>
               <!--end::Tab Content-->
 
               <!--begin::Tab Content-->
-              <div class="tab-pane" id="kt_apps_contacts_view_tab_3" role="tabpanel">
-                  <form class="form">
+              <div class="tab-pane" id="kt_apps_contacts_view_tab_3" role="tabpanel"  [ngClass]="tabcount == 2 ? 'active' : ''">
+                  <form class="form"   >
                       <!--begin::Notice-->
                       <div class="row">
                           <div class="col-lg-9 col-xl-6 offset-xl-3">

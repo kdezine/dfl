@@ -6,21 +6,20 @@ import { CollectionListService } from "../../../../services/collectionlist";
   styleUrls: ['./list.component.scss']
 })
 export class CollectionListComponent implements OnInit {
-  clist : any = []
-  cid : any 
-  tableview : boolean = false
-  constructor(private collectionlist : CollectionListService) { 
+  clist: any = []
+  cid: any
+  tableview: boolean = false
+  constructor(private collectionlist: CollectionListService) {
+
+  }
+
+  ngOnInit(): void {
     this.GetcollectionData()
   }
 
-  ngOnInit(): void {   
-  }
+  GetcollectionData() {
 
-  GetcollectionData()
-  {
-    
-    this.collectionlist.GetCollections().subscribe((Response) =>
-    {
+    this.collectionlist.GetCollections().subscribe((Response) => {
       this.clist = Response.ResponseData
       this.cid = Response.CollectionId
     })

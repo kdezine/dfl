@@ -19,10 +19,10 @@
                 <!--begin::Info-->
                 <div class="d-flex flex-column mr-auto">
                     <!--begin: Title-->
-                    <a href="#" class="card-title text-hover-primary font-weight-bolder font-size-h5 text-dark mb-1">{{item.InstitutionName}}</a>
+                    <a  class="card-title text-hover-primary font-weight-bolder font-size-h5 text-dark mb-1">{{item.InstitutionName}}</a>
                     <!--end::Title-->
                     <div class="d-flex flex-wrap my-2">
-                        <a href="#" class="text-muted text-hover-primary font-weight-bold">
+                        <a  class="text-muted text-hover-primary font-weight-bold">
                             <span class="svg-icon svg-icon-md svg-icon-gray-500 mr-1">
                                 <!--begin::Svg Icon | path:assets/media/svg/icons/Map/Marker2.svg-->
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -107,7 +107,7 @@
                     <a href="#" class="font-weight-bolder text-primary ml-2"><span>Status:</span><span class="text-warning ml-3">--</span></a>
                 </div>
             </div>
-            <a role="button" class="btn btn-primary btn-sm text-uppercase font-weight-bolder mt-5 mt-sm-0 mr-auto mr-sm-0 ml-sm-auto">details</a>
+            <a routerLink="/institute/view/{{item.Id}}/{{item.InstitutionName}}"  class="btn btn-primary btn-sm text-uppercase font-weight-bolder mt-5 mt-sm-0 mr-auto mr-sm-0 ml-sm-auto">details</a>
         </div>
         <!--end::Footer-->
     </div>
@@ -167,7 +167,7 @@
                                 <div class="text-warning">--</div>
                             </span></td>
                         <td data-field="Actions" data-autohide-disabled="false" aria-label="null" class="datatable-cell"><span style="overflow: visible; position: relative; width: 130px;">
-                                <a href="javascript:;" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon mr-2"> <span class="svg-icon svg-icon-primary svg-icon-2x">
+                                <a routerLink="/institute/view/{{item.Id}}/{{item.InstitutionName}}" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon mr-2"> <span class="svg-icon svg-icon-primary svg-icon-2x">
                                     <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\General\Visible.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <rect x="0" y="0" width="24" height="24"></rect>
@@ -176,7 +176,7 @@
                                         </g>
                                     </svg>
                                     <!--end::Svg Icon--></span> </a>
-                                <a href="javascript:;" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon mr-2" title="Edit details"> <span class="svg-icon svg-icon-md"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <a [routerLink]="['/institute/edit', item.Id]" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon mr-2" title="Edit details"> <span class="svg-icon svg-icon-md"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                 <rect x="0" y="0" width="24" height="24">
                                                 </rect>

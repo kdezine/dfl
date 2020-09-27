@@ -7,6 +7,7 @@ import { AllTestService } from '../../../../services/alltests'
 })
 export class ListTestComponent implements OnInit {
   testlist : any[] = []
+  
   constructor(private alltests : AllTestService) {
     this.testdata()
    }
