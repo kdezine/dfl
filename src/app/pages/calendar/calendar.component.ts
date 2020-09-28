@@ -33,14 +33,8 @@ export class CalendarComponent implements OnInit {
   };
   currentEvents: EventApi[] = [];
 
-  handleCalendarToggle() {
-    this.calendarVisible = !this.calendarVisible;
-  }
+ 
 
-  handleWeekendsToggle() {
-    const { calendarOptions } = this;
-    calendarOptions.weekends = !calendarOptions.weekends;
-  }
 
   handleDateSelect(selectInfo: DateSelectArg) {
     const title = prompt('Please enter a new title for your event');

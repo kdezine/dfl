@@ -213,7 +213,7 @@
                                                 <label>
                                                     <input type="checkbox"
                                                         name="Confidential"
-                                                        value="true" formControlName="Confidential" (change)="isConfidential($event)">
+                                                     formControlName="Confidential">
                                                        
                                                     <span></span>
                                                 </label>
@@ -224,42 +224,42 @@
                                         <label
                                             class="col-xl-3 col-lg-3 col-form-label">Preferred communication method:</label>
                                         <div class="col-9 col-form-label">
-                                            <div class="radio-inline mb-4">
+                                            <div class="checkbox-inline mb-4">
                                                 <label
-                                                    class="radio radio-outline radio-outline-2x radio-primary" for="pc-1">
-                                                    <input type="radio" name="PreferredCommunication" id="pc-1">
+                                                    class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary" for="pc-1">
+                                                    <input type="checkbox" name="PreferredCommunication" value="Phone" formControlName="PreferredCommunication" id="pc-1" (change)="prefercommun($event.target.value)">
                                                     <span></span>
                                                     Phone
                                                 </label>
                                                 <label
-                                                    class="radio radio-outline radio-outline-2x radio-primary" for="pc-2">
-                                                    <input type="radio" name="PreferredCommunication" id="pc-2">
+                                                    class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary" for="pc-2">
+                                                    <input type="checkbox" name="PreferredCommunication" value="Whatsapp" formControlName="PreferredCommunication" id="pc-2" (change)="prefercommun($event.target.value)">
                                                     <span></span>
                                                     Whatsapp
                                                 </label>
                                                 <label
-                                                    class="radio radio-outline radio-outline-2x radio-primary" for="pc-3">
-                                                    <input type="radio" name="PreferredCommunication" id="pc-3">
+                                                    class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary" for="pc-3">
+                                                    <input type="checkbox" name="PreferredCommunication" value="text" formControlName="PreferredCommunication" id="pc-3" (change)="prefercommun($event.target.value)">
                                                     <span></span>
                                                     text
                                                 </label>
                                             </div>
-                                            <div class="radio-inline">
+                                            <div class="checkbox-inline">
                                                 <label
-                                                    class="radio radio-outline radio-outline-2x radio-primary" for="pc-4">
-                                                    <input type="radio" name="PreferredCommunication" id="pc-4">
+                                                    class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary" for="pc-4">
+                                                    <input type="checkbox" name="PreferredCommunication" value="Email" formControlName="PreferredCommunication" id="pc-4" (change)="prefercommun($event.target.value)">
                                                     <span></span>
                                                     Email
                                                 </label>
                                                 <label
-                                                    class="radio radio-outline radio-outline-2x radio-primary" for="pc-5">
-                                                    <input type="radio" name="PreferredCommunication" id="pc-5">
+                                                    class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary" for="pc-5">
+                                                    <input type="checkbox" name="PreferredCommunication" value="In-Person" formControlName="PreferredCommunication" id="pc-5" (change)="prefercommun($event.target.value)">
                                                     <span></span>
                                                     In-Person
                                                 </label>
                                                 <label
-                                                    class="radio radio-outline radio-outline-2x radio-primary" for="pc-6">
-                                                    <input type="radio" name="PreferredCommunication" id="pc-6">
+                                                    class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary" for="pc-6">
+                                                    <input type="checkbox" name="PreferredCommunication" value="Others" formControlName="PreferredCommunication" id="pc-6" (change)="prefercommun($event.target.value)">
                                                     <span></span>
                                                     Others
                                                 </label>
@@ -404,6 +404,21 @@
                                             
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <div class="col-6">
+                                            <label class="form-label">Start Date</label>
+                                            <p>{{dateToday | date: 'dd MMM, yyyy'}}</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label">Due Date</label>
+                                                        <input type="date"
+                                                            class="form-control form-control-lg form-control-solid"
+                                                            name="Location" 
+                                                            placeholder="Your Location" formControlName="dueDate" [ngClass]="{'is-invalid' : submit && val.dueDate.errors}">
+                                                          <div class="invalid-feedback" *ngIf="submit && val.dueDate.errors">Select Due Date</div>
+                                        </div>
+                                    </div>
+                                    
                                     <!-- <div class="form-group row fv-plugins-icon-container">
                                         <label class="col-lg-3 col-form-label">Upload
                                             Files:</label>

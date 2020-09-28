@@ -172,13 +172,11 @@
                 <div class="d-flex flex-wrap mt-14">
                     <div class="mr-12 d-flex flex-column mb-7">
                         <span class="d-block font-weight-bold mb-4">Start Date</span>
-                        <span class="btn btn-light-primary btn-sm font-weight-bold btn-upper btn-text">14
-                            Jan, 16</span>
+                        <span class="btn btn-light-primary btn-sm font-weight-bold btn-upper btn-text">{{item.CreateDate | date:'dd MMM,  yyyy'}}</span>
                     </div>
                     <div class="mr-12 d-flex flex-column mb-7">
                         <span class="d-block font-weight-bold mb-4">Due Date</span>
-                        <span class="btn btn-light-danger btn-sm font-weight-bold btn-upper btn-text">21
-                            Nov, 18</span>
+                        <span class="btn btn-light-danger btn-sm font-weight-bold btn-upper btn-text">{{item.dueDate | date:'dd MMM,  yyyy'}}</span>
                     </div>
                     <!--begin::Progress-->
                     <div class="flex-row-fluid mb-7">
@@ -227,17 +225,7 @@
                             "></i><span>{{item.Discount}}</span></span>
                     </div>
                     <!--end::Item-->
-                    <!--begin::Item-->
-                    <div class="d-flex flex-column flex-lg-fill float-left mb-7">
-                        <span class="font-weight-bolder mb-4">Members</span>
-                        <div class="symbol-group symbol-hover">
-                            <div class="symbol symbol-30 symbol-circle" *ngFor="let item of [1,1,1,1,1]" data-toggle="tooltip" title="" data-original-title="Mark Stone">
-                                <img alt="Pic" src="assets/media/users/300_25.jpg">
-                            </div>
-                      
-                        </div>
-                    </div>
-                    <!--end::Item-->
+                  
                 </div>
                 <!--end::Blog-->
             </div>
@@ -256,8 +244,7 @@
                             </svg>
                             <!--end::Svg Icon--></span>
                         
-                        <a href="#" class="font-weight-bolder text-success ml-2">Good
-                            lead</a>
+                        <a class="font-weight-bolder text-success ml-2">{{item.leadType}}</a>
                     </div>
                     <div class="d-flex align-items-center mr-7">
                         <span class="svg-icon svg-icon-gray-500">
@@ -271,8 +258,7 @@
                             </svg>
                             <!--end::Svg Icon-->
                         </span>
-                        <a href="#" class="font-weight-bolder text-primary ml-2">648
-                            Comments</a>
+                        <a href="#" class="font-weight-bolder text-primary ml-2"> Comments</a>
                     </div>
                 </div>
                 <a role="button" routerLink="lead-detail/{{item.LeadId}}/{{item.Name}}" class="btn btn-primary btn-sm text-uppercase font-weight-bolder mt-5 mt-sm-0 mr-auto mr-sm-0 ml-sm-auto">details</a>

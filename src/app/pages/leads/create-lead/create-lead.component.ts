@@ -22,7 +22,7 @@ export class CreateLeadComponent implements OnInit {
   testlist: any = []
   dateToday: string = new Date().toDateString();
   id : any = -1
-  leadData : any 
+  leadData : any
   constructor(private _Activatedroute:ActivatedRoute,
     private _router:Router,
     private _viewlead:ViewLeadService,private formbuilder: FormBuilder, private httpcall: CreateLeadService, private collectionlist: CollectionListService, private alltests : AllTestService) { }
@@ -38,15 +38,13 @@ export class CreateLeadComponent implements OnInit {
       }
   })
   }
-  isConfidential(e){
-    console.log(e.target.value);
-  }
+
   viewData() {
     // this._viewlead.ViewLead(this.id, "test").subscribe((res) => {
     //   this.leadData = res.ResponseData[0];
     // });
     this._viewlead.ViewLead(this.id, "Test").subscribe((res) => {
-      this.leadData = res.ResponseData[0];
+      this.leadData = res.data.Table
       this.CreateLeadForm.setValue({
         Name: this.leadData.Name,
         Email: this.leadData.Email,
@@ -71,26 +69,31 @@ export class CreateLeadComponent implements OnInit {
         CreatedBy: this.leadData.CreatedBy,
         markAs: this.leadData.markAs,
         LeadId: this.id,
-        CreatedDate : this.dateToday,
+        dueDate : this.leadData.dueDate,
+        leadType : this.leadData.leadType,
+        leadstatus : this.leadData.leadstatus,
+        referral : this.leadData.referral,
+        images : this.leadData.images,
+        allComments : this.leadData.allComments,
         statusType: '2'
       })
     });
   }
   IntForm() {
     this.collectionlist.GetCollections().subscribe((Response) => {
-      this.clist = Response.ResponseData
+      this.clist = Response.data.Table
       
     })
     this.alltests.GetTests().subscribe((Response) =>
     {
-      this.testlist = Response.ResponseData
+      this.testlist = Response.data.Table
     })
     this.CreateLeadForm = this.formbuilder.group({
       Name: ['', Validators.required],
       Email: ['', Validators.required],
       ContactPhone: ['', Validators.required],
-      Confidential: [''],
-      PreferredCommunication: [''],
+      Confidential: [false],
+      PreferredCommunication: ['', Validators.required],
       Source: ['', Validators.required],
       TestInterested: ['', Validators.required],
       EstimatedValue: ['', Validators.required],
@@ -109,32 +112,27 @@ export class CreateLeadComponent implements OnInit {
       Events: [''],
       CreatedBy: [''],
       markAs: [''],
+      dueDate: ['', Validators.required],
+      leadType: [''],
+      leadstatus: [''],
+      referral: [''],
+      allComments: [''],
+      images: [''],
       LeadId: '-1',
       statusType: '1',
     })
   }
-
+  prefercommun(value)
+  {
+    this.CreateLeadForm.value.PreferredCommunication=value;  
+  }
   get val(){
     return  this.CreateLeadForm.controls
   }
   createlead(){
+    // debugger
     this.submit = true
 
-    if(
-      this.CreateLeadForm.controls["Name"].status == "INVALID" &&
-      this.CreateLeadForm.controls["Email"].status == "INVALID" &&
-      this.CreateLeadForm.controls["ContactPhone"].status == "INVALID" &&
-      this.CreateLeadForm.controls["Confidential"].status == "INVALID" &&
-      this.CreateLeadForm.controls["Source"].status == "INVALID" &&
-      this.CreateLeadForm.controls["TestInterested"].status == "INVALID" &&
-      this.CreateLeadForm.controls["EstimatedValue"].status == "INVALID" &&
-      this.CreateLeadForm.controls["Discount"].status == "INVALID" &&
-      this.CreateLeadForm.controls["Location"].status == "INVALID" &&
-      this.CreateLeadForm.controls["CollectionCenter"].status == "INVALID"
-    ){
-      return; 
-      console.log(this.stepcount)
-    }
     if(
       this.CreateLeadForm.controls["Name"].status == "VALID" &&
       this.CreateLeadForm.controls["Email"].status == "VALID" &&
@@ -142,23 +140,18 @@ export class CreateLeadComponent implements OnInit {
       this.CreateLeadForm.controls["Confidential"].status == "VALID" &&
       this.CreateLeadForm.controls["Source"].status == "VALID" &&
       this.CreateLeadForm.controls["TestInterested"].status == "VALID" &&
+      this.CreateLeadForm.controls["PreferredCommunication"].status == "VALID" &&
       this.CreateLeadForm.controls["EstimatedValue"].status == "VALID" &&
       this.CreateLeadForm.controls["Discount"].status == "VALID" &&
       this.CreateLeadForm.controls["Location"].status == "VALID" &&
-      this.CreateLeadForm.controls["CollectionCenter"].status == "VALID"
+      this.CreateLeadForm.controls["CollectionCenter"].status == "VALID" &&
+      this.CreateLeadForm.controls["dueDate"].status == "VALID"
       ){
         this.stepcount = 2
-        console.log(this.stepcount)
+     }else{
+       return
      }
-     if(
-      this.CreateLeadForm.controls["Addressline1"].status == "INVALID" &&
-      this.CreateLeadForm.controls["PinCode"].status == "INVALID" &&
-      this.CreateLeadForm.controls["City"].status == "INVALID" &&
-      this.CreateLeadForm.controls["State"].status == "INVALID" &&
-      this.CreateLeadForm.controls["Country"].status == "INVALID"
-    ){
-      return;
-    }
+     
      if(
       this.CreateLeadForm.controls["Addressline1"].status == "VALID" &&
       this.CreateLeadForm.controls["PinCode"].status == "VALID" &&
@@ -167,8 +160,9 @@ export class CreateLeadComponent implements OnInit {
       this.CreateLeadForm.controls["Country"].status == "VALID"
      ){
       this.stepcount = 3
-      // this.detail =  this.CreateLeadForm.controls
-      // console.log(this.detail)
+
+     } else{
+       return
      }
   }
   submitlead(){

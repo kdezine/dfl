@@ -20,7 +20,7 @@ export class LeadsListComponent implements OnInit {
 
   LeadsData() {
     this.leadslist.GetLeads().subscribe((Response) => {
-      this.leadlist = Response.ResponseData;
+      this.leadlist = Response.data.Table;
     });
   }
 

@@ -28,7 +28,7 @@ export class ViewTestComponent implements OnInit {
 
   viewData() {
     this._testdetail.ViewTest(this.tid, this.tname).subscribe((res) => {
-      this.testData = res.ResponseData[0];
+      this.testData = res.data.Table[0];
     });
   }
 }

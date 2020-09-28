@@ -28,11 +28,11 @@ export class Dashboard1Component implements OnInit {
     ]
     this.leadslist.GetLeads().subscribe((Response) =>
     {
-      this.dashleads = Response.ResponseData
+      this.dashleads = Response.data.Table
     })
     this.inslist.GetInstitutes().subscribe((Response) =>
     {
-      this.dashins = Response.ResponseData
+      this.dashins = Response.data.Table
     })
   }
 }

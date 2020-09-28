@@ -39,7 +39,7 @@ export class CreateTestComponent implements OnInit {
   }
   GetTestData(){
     this._testdetail.ViewTest(this.id, "Test").subscribe((res) => {
-      this.testData = res.ResponseData[0];
+      this.testData = res.data.Table[0];
       this.CreateTestForm.setValue({
         TestName: this.testData.TestName,
         Price: this.testData.Price,

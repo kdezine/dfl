@@ -17,7 +17,7 @@ export class ListTestComponent implements OnInit {
   testdata(){
     this.alltests.GetTests().subscribe((Response) =>
     {
-      this.testlist = Response.ResponseData
+      this.testlist = Response.data.Table
     })
   }
 
