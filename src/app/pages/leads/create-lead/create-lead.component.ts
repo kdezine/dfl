@@ -23,6 +23,7 @@ export class CreateLeadComponent implements OnInit {
   dateToday: string = new Date().toDateString();
   id : any = -1
   leadData : any
+
   constructor(private _Activatedroute:ActivatedRoute,
     private _router:Router,
     private _viewlead:ViewLeadService,private formbuilder: FormBuilder, private httpcall: CreateLeadService, private collectionlist: CollectionListService, private alltests : AllTestService) { }
@@ -41,10 +42,10 @@ export class CreateLeadComponent implements OnInit {
 
   viewData() {
     // this._viewlead.ViewLead(this.id, "test").subscribe((res) => {
-    //   this.leadData = res.ResponseData[0];
+    //   this.leadData = res.data.Table[0];
     // });
     this._viewlead.ViewLead(this.id, "Test").subscribe((res) => {
-      this.leadData = res.data.Table
+      this.leadData = res.data.Table[0]
       this.CreateLeadForm.setValue({
         Name: this.leadData.Name,
         Email: this.leadData.Email,

@@ -21,7 +21,7 @@ export class ListInstituteComponent implements OnInit {
     
     this.leadslist.GetInstitutes().subscribe((Response) =>
     {
-      this.inslist = Response.ResponseData
+      this.inslist = Response.data.Table
     })
   }
 

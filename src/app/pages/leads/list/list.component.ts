@@ -11,6 +11,8 @@ export class LeadsListComponent implements OnInit {
   leadlist: any = [];
   leadid: any;
   tableview : boolean = true
+  showdellead : boolean = false
+  delleadid : any
   constructor(
     private leadslist: leadsListService,
     private dellead: DelLeadService
@@ -25,24 +27,28 @@ export class LeadsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.leadid);
+    console.log(this.leadid)
+    
   }
-  DeleteLead(item) {
+  showdelpop(id){
+    debugger
+    this.showdellead = true
+    this.leadlist.LeadId = id
+
+    let newid = this.leadlist.LeadId
+    this.DeleteLead(newid)
+  }
+  DeleteLead(newid) {
+    this.showdellead = true
     let param={
       "statusType":'3',
-      "LeadId" : item.LeadId
+      "LeadId" : newid
     }
     this.dellead.DelLead(param).subscribe((Response) => {
-      console.log(this.leadid);
-
+      
       if(Response.Success == "success"){
         this.LeadsData();
       }
-      else{
-        console.log("Something is not working")
-      }
-
-      
     });
   }
 }
