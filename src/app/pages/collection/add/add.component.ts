@@ -146,12 +146,13 @@ export class CollectionAddComponent implements OnInit  {
       }
 
       finalsubmit(){
-        console.log("Form submitted Successfully.")
+        // console.log("Form submitted Successfully.")
+        this.stepcount = 5
         // debugger
         this.httpcall.AddCollection(this.AddCollectionForm.value).subscribe((res) =>{
           console.log(res);
           console.log("Collection form Submitted");
-          this.stepcount = 5
+          
         })
         
       }

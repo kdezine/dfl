@@ -11,7 +11,7 @@
                 [attr.data-wizard-state]="stepcount > 1 ? 'between' : 'first' && stepcount > 2 ? 'last' : 'first'">
                     <div class="kt-grid__item">
                         <!--begin::Wizard Nav-->
-                        <div class="wizard-nav border-bottom"  *ngIf="stepcount < 5">
+                        <div class="wizard-nav border-bottom" >
                             <div class="wizard-steps p-8 p-lg-10">
                                 <div class="wizard-step" data-wizard-type="step" data-wizard-state="current"
                                 [attr.data-wizard-state]="stepcount == 1 ? 'current' : 'pending' && stepcount > 2 ? 'done' : 'current'"
@@ -598,6 +598,7 @@
                                 <!--begin::Form Wizard Step 4-->
                                 <div class="pb-5" data-wizard-type="step-content"
                                 [attr.data-wizard-state]="stepcount == 3 ? 'current' : 'pending'"
+                                *ngIf="stepcount < 5"
                                 >
                                     <h4 class="mb-10 font-weight-bold">Review your Details and
                                         Submit</h4>
@@ -643,18 +644,19 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                 <!--form success box-->
+                            <div class="pb-5" data-wizard-type="step-content"  [attr.data-wizard-state]="stepcount == 5 ? 'current' : 'pending'">
+                                <div class="p-5">
+                                <h3 class="font-size-h1">Success</h3>
+                                <p class="my-4">Collection form is submitted</p>
+                                <div class="btn-group">
+                                <a routerLink="/collection-list" class="btn btn-success">See All</a>
+                                </div>
+                                </div>
+                            </div>
+                            <!--end:: form success box-->
                                 <!--end::Form Wizard Step 4-->
- <!--form success box-->
- <div class="pb-5" data-wizard-type="step-content"  [attr.data-wizard-state]="stepcount == 5 ? 'current' : 'pending'">
-    <div class="p-5">
-       <h3 class="font-size-h1">Success</h3>
-       <p class="my-4">Collection form is submitted</p>
-       <div class="btn-group">
-       <a routerLink="/collection-list" class="btn btn-success">See All</a>
-       </div>
-    </div>
-</div>
-<!--end:: form success box-->
+                           
                                 <!--begin::Wizard Actions-->
                                 <div class="d-flex justify-content-between border-top pt-10" *ngIf="stepcount < 5">
                                     <div class="mr-2">

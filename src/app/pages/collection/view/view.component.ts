@@ -25,7 +25,7 @@ export class ViewCollectionComponent implements OnInit {
     }
     viewData() {
       this._viewcollection.ViewCollection(this.id, this.name).subscribe((res) => {
-        this.testData = res.ResponseData[0];
+        this.testData = res.data.Table[0];
       });
     }
 

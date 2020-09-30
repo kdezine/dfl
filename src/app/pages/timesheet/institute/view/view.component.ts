@@ -24,7 +24,7 @@ export class ViewInstituteComponent implements OnInit {
   }
   viewData() {
     this._viewinstitute.ViewInstitutet(this.id, this.name).subscribe((res) => {
-      this.testData = res.ResponseData[0];
+      this.testData = res.data.Table[0];
     });
   }
 

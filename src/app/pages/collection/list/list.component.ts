@@ -10,7 +10,7 @@ export class CollectionListComponent implements OnInit {
   cid: any
   tableview: boolean = false
   constructor(private collectionlist: CollectionListService) {
-
+    this.GetcollectionData()
   }
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class CollectionListComponent implements OnInit {
   GetcollectionData() {
 
     this.collectionlist.GetCollections().subscribe((Response) => {
-      this.clist = Response.ResponseData
+      this.clist = Response.data.Table
       this.cid = Response.CollectionId
     })
   }
